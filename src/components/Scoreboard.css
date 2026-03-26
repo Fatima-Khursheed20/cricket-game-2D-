@@ -1,0 +1,118 @@
+/* ── SCOREBOARD – light mode broadcast style ── */
+.scoreboard {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(14, 165, 233, 0.08), 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* Left accent block — big score */
+.sb-score-block {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 12px 22px 12px 20px;
+  background: linear-gradient(135deg, #e0f2fe 0%, #eff6ff 100%);
+  border-right: 1.5px solid #e2e8f0;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.sb-score-block::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15%;
+  bottom: 15%;
+  width: 3px;
+  background: linear-gradient(180deg, #0ea5e9, #38bdf8);
+  border-radius: 0 2px 2px 0;
+}
+
+.sb-runs {
+  font-family: var(--mono, 'Share Tech Mono', monospace);
+  font-size: 2.4rem;
+  color: #0f172a;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.sb-slash {
+  font-family: var(--mono, 'Share Tech Mono', monospace);
+  font-size: 1.3rem;
+  color: #cbd5e1;
+  margin: 0 2px;
+  align-self: flex-end;
+  padding-bottom: 4px;
+}
+
+.sb-wkts {
+  font-family: var(--mono, 'Share Tech Mono', monospace);
+  font-size: 1.7rem;
+  color: #ef4444;
+  line-height: 1;
+  align-self: flex-end;
+  padding-bottom: 3px;
+}
+
+/* Stats strip */
+.sb-grid {
+  display: flex;
+  flex: 1;
+  align-items: stretch;
+}
+
+.stat-cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  padding: 9px 16px;
+  border-right: 1.5px solid #f1f5f9;
+  flex: 1;
+  transition: background 0.15s;
+}
+
+.stat-cell:last-child {
+  border-right: none;
+}
+
+.stat-cell:hover {
+  background: #f0f9ff;
+}
+
+.stat-label {
+  font-family: var(--mono, 'Share Tech Mono', monospace);
+  font-size: 0.48rem;
+  color: #94a3b8;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-family: var(--mono, 'Share Tech Mono', monospace);
+  font-size: 0.9rem;
+  color: #334155;
+  letter-spacing: 0.5px;
+}
+
+.stat-value--style-agg {
+  color: #f97316;
+  font-weight: 700;
+}
+
+.stat-value--style-def {
+  color: #0ea5e9;
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .scoreboard { flex-wrap: wrap; }
+  .sb-score-block { width: 100%; border-right: none; border-bottom: 1.5px solid #f1f5f9; }
+  .sb-grid { flex-wrap: wrap; }
+  .stat-cell { min-width: 60px; }
+}

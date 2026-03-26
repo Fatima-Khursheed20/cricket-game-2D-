@@ -1,0 +1,143 @@
+.pb-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pb-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pb-title {
+  font-family: var(--mono, 'Share Tech Mono', monospace);
+  font-size: 0.52rem;
+  color: #94a3b8;
+  letter-spacing: 3px;
+}
+
+.pb-hint {
+  font-size: 0.60rem;
+  color: #94a3b8;
+  font-family: var(--mono, 'Share Tech Mono', monospace);
+}
+
+/* ── TRACK ── */
+.pb-track {
+  position: relative;
+  height: 32px;
+  border-radius: 8px;
+  border: 1.5px solid #e2e8f0;
+  overflow: hidden;
+  background: #f8fafc;
+  box-shadow: inset 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.pb-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pb-empty-text {
+  font-size: 0.65rem;
+  color: #cbd5e1;
+  font-family: var(--mono, 'Share Tech Mono', monospace);
+  letter-spacing: 1px;
+}
+
+/* ── SEGMENTS ── */
+.pb-segments {
+  display: flex;
+  height: 100%;
+}
+
+.pb-seg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: flex 0.35s ease;
+  opacity: 0.9;
+}
+
+.pb-seg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.05) 100%);
+  pointer-events: none;
+}
+
+.pb-seg + .pb-seg {
+  border-left: 1px solid rgba(255,255,255,0.55);
+}
+
+.pb-seg-text {
+  font-family: var(--mono, 'Share Tech Mono', monospace);
+  font-size: 0.57rem;
+  color: rgba(255,255,255,0.97);
+  font-weight: 800;
+  z-index: 1;
+  pointer-events: none;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* ── NEEDLE ── */
+.pb-needle {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: #1e293b;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.15;
+  transition: none;
+}
+
+.pb-needle--on {
+  opacity: 1;
+  background: #0f172a;
+  box-shadow: 0 0 8px rgba(15, 23, 42, 0.45), 0 0 2px #0f172a;
+}
+
+.pb-needle::before {
+  content: '▼';
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 8px;
+  color: #0ea5e9;
+}
+
+/* ── LABELS ── */
+.pb-labels {
+  display: flex;
+}
+
+.pb-lbl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  transition: flex 0.35s ease;
+}
+
+.pb-lbl span:first-child {
+  font-family: var(--mono, 'Share Tech Mono', monospace);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.pb-pct {
+  font-size: 0.48rem;
+  color: #94a3b8;
+  font-family: var(--mono, 'Share Tech Mono', monospace);
+}

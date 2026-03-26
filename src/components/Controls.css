@@ -1,0 +1,181 @@
+/* ── CONTROLS PANEL – light mode ── */
+.controls {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(14, 165, 233, 0.08), 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* ── TOP ROW ── */
+.ctrl-top-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-bottom: 1.5px solid #f1f5f9;
+  background: #f8faff;
+}
+
+.ctrl-style-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.ctrl-style-label {
+  font-family: var(--mono, 'Share Tech Mono', monospace);
+  font-size: 0.52rem;
+  color: #94a3b8;
+  letter-spacing: 3px;
+  white-space: nowrap;
+}
+
+.style-chips {
+  display: flex;
+  gap: 6px;
+}
+
+.style-chip {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1.5px solid #e2e8f0;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.16s ease;
+  color: #94a3b8;
+  font-family: var(--mono, 'Share Tech Mono', monospace);
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.style-chip:hover:not(:disabled) {
+  border-color: #f97316;
+  color: #f97316;
+  background: #fff7ed;
+}
+
+.style-chip--agg.style-chip--on {
+  border-color: #f97316;
+  background: #fff7ed;
+  color: #ea6200;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.14);
+}
+
+.style-chip--def.style-chip--on {
+  border-color: #0ea5e9;
+  background: #f0f9ff;
+  color: #0284c7;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.14);
+}
+
+.style-chip:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.chip-icon {
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+/* ── ACTION BUTTONS ── */
+.ctrl-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.btn-shoot {
+  flex: 1;
+  padding: 9px 20px;
+  font-family: var(--mono, 'Share Tech Mono', monospace);
+  font-size: 0.82rem;
+  letter-spacing: 3px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0ea5e9, #6366f1);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 800;
+  transition: all 0.15s;
+  box-shadow: 0 3px 12px rgba(14, 165, 233, 0.35);
+}
+
+.btn-shoot:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0284c7, #4f46e5);
+  box-shadow: 0 5px 18px rgba(14, 165, 233, 0.45);
+  transform: translateY(-1px);
+}
+
+.btn-shoot:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-shoot:disabled {
+  background: #f1f5f9;
+  color: #cbd5e1;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.btn-restart {
+  padding: 9px 14px;
+  font-family: var(--mono, 'Share Tech Mono', monospace);
+  font-size: 0.62rem;
+  letter-spacing: 2px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  background: #fff;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-restart:hover {
+  color: #64748b;
+  border-color: #cbd5e1;
+  background: #f8fafc;
+}
+
+/* ── POWERBAR SECTION ── */
+.ctrl-powerbar {
+  padding: 10px 16px;
+  border-bottom: 1.5px solid #f1f5f9;
+  background: #fff;
+}
+
+/* ── BOTTOM ROW ── */
+.ctrl-bottom-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: #f8faff;
+}
+
+.ctrl-status {
+  font-size: 0.65rem;
+  color: #94a3b8;
+  font-family: var(--mono, 'Share Tech Mono', monospace);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.status-active {
+  color: #0ea5e9;
+  font-weight: 700;
+  animation: pulse-status 1.1s ease-in-out infinite;
+}
+
+@keyframes pulse-status {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
