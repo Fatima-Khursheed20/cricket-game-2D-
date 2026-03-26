@@ -1,0 +1,19 @@
+/* ── GLOBAL LIGHT MODE OVERRIDES ── */
+/* Add these to your App.css or index.css */
+
+:root {
+  --mono: 'Share Tech Mono', monospace;
+  color-scheme: light;
+}
+
+/* Force light background everywhere */
+html, body, #root {
+  background: #f0f9ff;
+  color: #0f172a;
+  min-height: 100vh;
+}
+
+/* App wrapper — sky blue tinted background */
+.app, .app-layout, main {
+  background: #f0f9ff;
+}
